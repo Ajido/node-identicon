@@ -1,0 +1,33 @@
+{
+    "name" : "identicon",
+    "description" : "Identicon Generator on Node.js",
+    "version" : "0.0.1",
+    "author" : "Ajido <dkuriyam@gmail.com>",
+    "main" : "index",
+    "keywords" : [
+        "identicon",
+        "canvas"
+    ],
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/ajido/node-identicon.git"
+    },
+    "scripts" : {
+        "test" : "nodeunit test"
+    },
+    "dependencies" : {
+        "canvas" : "*"
+    },
+    "devDependencies" : {
+        "nodeunit" : ">0.0.0"
+    },
+    "licenses" : [
+        {
+            "type" : "MIT",
+            "url" : "http://github.com/ajido/node-identicon/raw/master/README.md"
+        }
+    ],
+    "engines" : {
+        "node" : ">= 0.4.0"
+    }
+}
