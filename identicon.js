@@ -49,7 +49,7 @@ var patch14 = new Array(0, 2, 10);
 var patchTypes = new Array(patch0, patch1, patch2, patch3, patch4, patch5, patch6, patch7, patch8, patch9, patch10, patch11, patch12, patch13, patch14, patch0);
 var centerPatchTypes = new Array(0, 4, 8, 15);
 
-function render_identicon_patch(ctx, x, y, size, patch, turn, invert, foreColor, backColor) {
+function render_identicon_patch (ctx, x, y, size, patch, turn, invert, foreColor, backColor) {
 
     patch %= patchTypes.length;
     turn %= 4;
@@ -87,7 +87,7 @@ function render_identicon_patch(ctx, x, y, size, patch, turn, invert, foreColor,
     ctx.restore();
 }
 
-function render_identicon(ctx, code, size) {
+function render_identicon (ctx, code, size) {
 
     var patchSize = size / 3;
     var middleType = centerPatchTypes[code & 3];
@@ -120,8 +120,7 @@ function render_identicon(ctx, code, size) {
     render_identicon_patch(ctx, 0, patchSize * 2, patchSize, cornerType, cornerTurn++, cornerInvert, foreColor, backColor);
 }
 
-exports.generate = function(str, size, callback) {
-
+function _gen(str, size, callback) {
     var hash = crypto.createHash('sha1').update(new Buffer(str, 'utf8')).digest('binary');
     var code = (hash.charCodeAt(0) << 24) | (hash.charCodeAt(1) << 16) |
     (hash.charCodeAt(2) << 8) | hash.charCodeAt(3);
@@ -131,8 +130,21 @@ exports.generate = function(str, size, callback) {
 
     render_identicon(ctx, code, size);
 
-    canvas.toBuffer(function(err, buffer) {
-        callback(err, buffer);
-    });
+    if (callback && typeof callback === 'function') {
+        return canvas.toBuffer(function (err, buffer) {
+            callback(err, buffer);
+        });
+    }
+    else {
+        return canvas.toBuffer();
+    }
+}
+
+exports.generate = exports.gen = function (str, size, callback) {
+    return _gen(str, size, callback);
+}
+
+exports.generateSync = exports.genSync = function (str, size) {
+    return _gen(str, size);
 }
 
