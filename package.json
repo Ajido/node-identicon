@@ -3,7 +3,7 @@
     "description" : "Identicon Generator on Node.js",
     "version" : "1.0.0",
     "author" : "Ajido <dkuriyam@gmail.com>",
-    "main" : "index",
+    "main" : "identicon",
     "keywords" : [
         "identicon",
         "canvas"
