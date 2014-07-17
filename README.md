@@ -1,7 +1,7 @@
 # node-identicon
 
 [Identicon](https://github.com/donpark/identicon) generator on Node.js  
-[![Build Status](https://secure.travis-ci.org/ajido/node-identicon.png?branch=master)](https://travis-ci.org/ajido/node-identicon)
+[![Build Status](https://travis-ci.org/Ajido/node-identicon.svg?branch=master)](https://travis-ci.org/Ajido/node-identicon)
 
 ## Installation
 
