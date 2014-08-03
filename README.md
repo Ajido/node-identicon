@@ -2,6 +2,7 @@
 
 [Identicon](https://github.com/donpark/identicon) generator on Node.js  
 [![Build Status](https://travis-ci.org/Ajido/node-identicon.svg?branch=master)](https://travis-ci.org/Ajido/node-identicon)
+[![NPM version](https://badge.fury.io/js/identicon.svg)](http://badge.fury.io/js/identicon)
 
 ## Installation
 
@@ -15,7 +16,7 @@ $ npm install identicon
 var identicon = require('identicon');
 var fs = require('fs');
 
-// Asynchronous API (base_string, size, callback)
+// Asynchronous API (id, size, callback)
 identicon.generate('ajido', 150, function(err, buffer) {
     if (err) throw err;
 
@@ -23,7 +24,7 @@ identicon.generate('ajido', 150, function(err, buffer) {
     fs.writeFileSync(__dirname + '/identicon.png', buffer);
 });
 
-// Synchronous API (base_string, size)
+// Synchronous API (id, size)
 var buffer = identicon.generateSync('ajido', 40);
 ```
 
