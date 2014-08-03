@@ -45,5 +45,27 @@ exports['identicon'] = {
         test.ok(img.height === 50);
 
         test.done();
+    },
+    gen2 : function (test) {
+        identicon.gen({ id: 'test', size: 60 }, function(err, buffer) {
+            if (err) throw err;
+
+            var img = new Image;
+            img.src = buffer;
+
+            test.ok(img.width === 60);
+            test.ok(img.height === 60);
+
+            test.done();
+        });
+    },
+    genSync2 : function (test) {
+        var img = new Image;
+        img.src = identicon.genSync({ id: 'test', size: 60 });
+
+        test.ok(img.width === 60);
+        test.ok(img.height === 60);
+
+        test.done();
     }
 }

@@ -141,10 +141,18 @@ function _gen(str, size, callback) {
 }
 
 exports.generate = exports.gen = function (str, size, callback) {
+    if (typeof str === 'object' && typeof size === 'function') {
+        return _gen(str.id, str.size, size);
+    }
+
     return _gen(str, size, callback);
 }
 
 exports.generateSync = exports.genSync = function (str, size) {
+    if (typeof str === 'object') {
+        return _gen(str.id, str.size);
+    }
+
     return _gen(str, size);
 }
 
