@@ -1,7 +1,7 @@
 {
     "name" : "identicon",
     "description" : "Identicon Generator on Node.js",
-    "version" : "1.0.0",
+    "version" : "1.1.0",
     "author" : "Ajido <dkuriyam@gmail.com>",
     "main" : "identicon",
     "keywords" : [
@@ -10,7 +10,7 @@
     ],
     "repository" : {
         "type" : "git",
-        "url" : "git://github.com/ajido/node-identicon.git"
+        "url" : "git://github.com/Ajido/node-identicon.git"
     },
     "scripts" : {
         "test" : "nodeunit test"
