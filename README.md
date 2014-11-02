@@ -16,16 +16,16 @@ $ npm install identicon
 var identicon = require('identicon');
 var fs = require('fs');
 
-// Asynchronous API (id, size, callback)
-identicon.generate('ajido', 150, function(err, buffer) {
+// Asynchronous API
+identicon.generate({ id: 'ajido', size: 150 }, function(err, buffer) {
     if (err) throw err;
 
-    // buffer is identicon of the PNG format
+    // buffer is the PNG format identicon.
     fs.writeFileSync(__dirname + '/identicon.png', buffer);
 });
 
-// Synchronous API (id, size)
-var buffer = identicon.generateSync('ajido', 40);
+// Synchronous API
+var buffer = identicon.generateSync({ id: 'ajido', size: 40 });
 ```
 
 ![identicon](https://lh3.googleusercontent.com/-7UnAKWoGK8M/UMOSN2z5vII/AAAAAAA6oSE/GNi39ESzkWE/s150/identicon.png)
