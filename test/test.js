@@ -1,71 +1,101 @@
-var identicon = require('../identicon');
+'use strict';
+
+var assert = require('assert');
+var crypto = require('crypto');
+
 var Image = require('canvas').Image;
+var identicon = require('../identicon');
 
-exports['identicon'] = {
-    generate : function (test) {
-        identicon.generate('test', 40, function(err, buffer) {
-            if (err) throw err;
+describe('generate', function() {
+  it('should be generated 60x60 identicon', function(done) {
+    identicon.gen({ id: 'test', size: 60 }, function(err, buffer) {
+      if (err) return done(err);
 
-            var img = new Image;
-            img.src = buffer;
+      var img = new Image();
+      img.src = buffer;
 
-            test.ok(img.width === 40);
-            test.ok(img.height === 40);
+      assert.equal(img.width, 60);
+      assert.equal(img.height, 60);
 
-            test.done();
-        });
-    },
-    gen : function (test) {
-        identicon.gen('test', 50, function(err, buffer) {
-            if (err) throw err;
+      var hash = crypto.createHash('md5').update(buffer).digest('hex');
+      assert.equal(hash, '4f443f43407a07538bfeed292d230753');
 
-            var img = new Image;
-            img.src = buffer;
+      done();
+    });
+  });
 
-            test.ok(img.width === 50);
-            test.ok(img.height === 50);
+  it('should be generated 50x50 identicon', function(done) {
+    identicon.generate('test', 50, function(err, buffer) {
+        if (err) return done(err);
 
-            test.done();
-        });
-    },
-    generateSync : function (test) {
-        var img = new Image;
-        img.src = identicon.generateSync('test', 40);
+        var img = new Image();
+        img.src = buffer;
 
-        test.ok(img.width === 40);
-        test.ok(img.height === 40);
+        assert.equal(img.width, 50);
+        assert.equal(img.height, 50);
 
-        test.done();
-    },
-    genSync : function (test) {
-        var img = new Image;
-        img.src = identicon.genSync('test', 50);
+        var hash = crypto.createHash('md5').update(buffer).digest('hex');
+        assert.equal(hash, '9a1ac1f3a3350013a0e816c353cd9fdf');
 
-        test.ok(img.width === 50);
-        test.ok(img.height === 50);
+        done();
+    });
+  });
 
-        test.done();
-    },
-    gen2 : function (test) {
-        identicon.gen({ id: 'test', size: 60 }, function(err, buffer) {
-            if (err) throw err;
+  it('should be generated 40x40 identicon', function(done) {
+    identicon.gen('test', 40, function(err, buffer) {
+      if (err) return done(err);
 
-            var img = new Image;
-            img.src = buffer;
+      var img = new Image();
+      img.src = buffer;
 
-            test.ok(img.width === 60);
-            test.ok(img.height === 60);
+      assert.equal(img.width, 40);
+      assert.equal(img.height, 40);
 
-            test.done();
-        });
-    },
-    genSync2 : function (test) {
-        var img = new Image;
-        img.src = identicon.genSync({ id: 'test', size: 60 });
+      var hash = crypto.createHash('md5').update(buffer).digest('hex');
+      assert.equal(hash, 'a8c15500bed9d09f59052c50b3be7fcd');
 
-        test.ok(img.width === 60);
-        test.ok(img.height === 60);
+      done();
+    });
+  });
+});
 
-        test.done();
-    }
-}
+describe('generateSync', function() {
+  it('should be generated 60x60 identicon', function() {
+    var buffer = identicon.genSync({ id: 'test', size: 60 });
+
+    var img = new Image();
+    img.src = buffer;
+
+    assert.equal(img.width, 60);
+    assert.equal(img.height, 60);
+
+    var hash = crypto.createHash('md5').update(buffer).digest('hex');
+    assert.equal(hash, '4f443f43407a07538bfeed292d230753');
+  });
+
+  it('should be generated 50x50 identicon', function() {
+    var buffer = identicon.generateSync('test', 50);
+
+    var img = new Image();
+    img.src = buffer;
+
+    assert.equal(img.width, 50);
+    assert.equal(img.height, 50);
+
+    var hash = crypto.createHash('md5').update(buffer).digest('hex');
+    assert.equal(hash, '9a1ac1f3a3350013a0e816c353cd9fdf');
+  });
+
+  it('should be generated 40x40 identicon', function() {
+    var buffer = identicon.genSync('test', 40);
+
+    var img = new Image();
+    img.src = buffer;
+
+    assert.equal(img.width, 40);
+    assert.equal(img.height, 40);
+
+    var hash = crypto.createHash('md5').update(buffer).digest('hex');
+    assert.equal(hash, 'a8c15500bed9d09f59052c50b3be7fcd');
+  });
+});
