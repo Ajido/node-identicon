@@ -1,6 +1,6 @@
 # node-identicon
 
-[Identicon](https://github.com/donpark/identicon) generator on Node.js  
+[Identicon](https://github.com/donpark/identicon) generator for Node.js  
 [![Build Status](https://travis-ci.org/Ajido/node-identicon.svg?branch=master)](https://travis-ci.org/Ajido/node-identicon)
 [![NPM version](https://badge.fury.io/js/identicon.svg)](http://badge.fury.io/js/identicon)
 
@@ -20,7 +20,7 @@ var fs = require('fs');
 identicon.generate({ id: 'ajido', size: 150 }, function(err, buffer) {
     if (err) throw err;
 
-    // buffer is the PNG format identicon.
+    // buffer is identicon in PNG format.
     fs.writeFileSync(__dirname + '/identicon.png', buffer);
 });
 
