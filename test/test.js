@@ -17,9 +17,6 @@ describe('generate', function() {
       assert.equal(img.width, 60);
       assert.equal(img.height, 60);
 
-      var hash = crypto.createHash('md5').update(buffer).digest('hex');
-      assert.equal(hash, '4f443f43407a07538bfeed292d230753');
-
       done();
     });
   });
@@ -33,9 +30,6 @@ describe('generate', function() {
 
         assert.equal(img.width, 50);
         assert.equal(img.height, 50);
-
-        var hash = crypto.createHash('md5').update(buffer).digest('hex');
-        assert.equal(hash, '9a1ac1f3a3350013a0e816c353cd9fdf');
 
         done();
     });
@@ -51,9 +45,6 @@ describe('generate', function() {
       assert.equal(img.width, 40);
       assert.equal(img.height, 40);
 
-      var hash = crypto.createHash('md5').update(buffer).digest('hex');
-      assert.equal(hash, 'a8c15500bed9d09f59052c50b3be7fcd');
-
       done();
     });
   });
@@ -68,9 +59,6 @@ describe('generateSync', function() {
 
     assert.equal(img.width, 60);
     assert.equal(img.height, 60);
-
-    var hash = crypto.createHash('md5').update(buffer).digest('hex');
-    assert.equal(hash, '4f443f43407a07538bfeed292d230753');
   });
 
   it('should be generated 50x50 identicon', function() {
@@ -81,9 +69,6 @@ describe('generateSync', function() {
 
     assert.equal(img.width, 50);
     assert.equal(img.height, 50);
-
-    var hash = crypto.createHash('md5').update(buffer).digest('hex');
-    assert.equal(hash, '9a1ac1f3a3350013a0e816c353cd9fdf');
   });
 
   it('should be generated 40x40 identicon', function() {
@@ -94,8 +79,5 @@ describe('generateSync', function() {
 
     assert.equal(img.width, 40);
     assert.equal(img.height, 40);
-
-    var hash = crypto.createHash('md5').update(buffer).digest('hex');
-    assert.equal(hash, 'a8c15500bed9d09f59052c50b3be7fcd');
   });
 });
