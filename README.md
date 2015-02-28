@@ -1,8 +1,10 @@
 # node-identicon
 
-[Identicon](https://github.com/donpark/identicon) generator for Node.js  
-[![Build Status](https://travis-ci.org/Ajido/node-identicon.svg?branch=master)](https://travis-ci.org/Ajido/node-identicon)
-[![NPM version](https://badge.fury.io/js/identicon.svg)](http://badge.fury.io/js/identicon)
+[![Npm version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][gemnasium-image]][gemnasium-url]
+  
+[Identicon](https://github.com/donpark/identicon) generator for Node.js
 
 ## Installation
 
@@ -55,3 +57,9 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+[travis-image]: https://img.shields.io/travis/Ajido/node-identicon.svg?style=flat-square
+[travis-url]: https://travis-ci.org/Ajido/node-identicon
+[npm-image]: https://img.shields.io/npm/v/identicon.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/identicon
+[gemnasium-image]: http://img.shields.io/gemnasium/Ajido/node-identicon.svg?style=flat-square
+[gemnasium-url]: https://gemnasium.com/Ajido/node-identicon
