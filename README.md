@@ -30,7 +30,7 @@ identicon.generate({ id: 'ajido', size: 150 }, function(err, buffer) {
 var buffer = identicon.generateSync({ id: 'ajido', size: 40 });
 ```
 
-![identicon](https://lh3.googleusercontent.com/-7UnAKWoGK8M/UMOSN2z5vII/AAAAAAA6oSE/GNi39ESzkWE/s150/identicon.png)
+<img src="https://cloud.githubusercontent.com/assets/206827/7214948/529f8966-e5fc-11e4-8aa0-c84ada23acc2.png" width="150" height="150">
 
 ## License
 
