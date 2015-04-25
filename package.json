@@ -16,10 +16,10 @@
     "test": "mocha -R spec --recursive"
   },
   "dependencies": {
-    "canvas": "^1.2.1"
+    "canvas": "^1.2.2"
   },
   "devDependencies": {
-    "mocha": "^2.1.0"
+    "mocha": "^2.2.4"
   },
   "licenses": "MIT",
   "engines": {
