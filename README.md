@@ -12,6 +12,21 @@
 $ npm install identicon
 ```
 
+## Installing dependencies
+
+For more information, check the [node-canvas](https://github.com/Automattic/node-canvas) README.
+
+```bash
+## Ubuntu or Debian
+apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+
+## RHEL or CentOS
+yum install cairo-devel libjpeg-turbo-devel libpng-devel giflib-devel gcc-c++
+
+## Mac
+curl -sL https://raw.githubusercontent.com/LearnBoost/node-canvas/master/install | sh
+```
+
 ## Example
 
 ```javascript
@@ -30,7 +45,7 @@ identicon.generate({ id: 'ajido', size: 150 }, function(err, buffer) {
 var buffer = identicon.generateSync({ id: 'ajido', size: 40 });
 ```
 
-<img src="https://cloud.githubusercontent.com/assets/206827/7214948/529f8966-e5fc-11e4-8aa0-c84ada23acc2.png" width="150" height="150">
+<img src="https://cloud.githubusercontent.com/assets/206827/7214948/529f8966-e5fc-11e4-8aa0-c84ada23acc2.png" width="300" height="300">
 
 ## License
 
