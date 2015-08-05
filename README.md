@@ -14,7 +14,7 @@ $ npm install identicon
 
 ## Installing dependencies
 
-For more information, check the [node-canvas](https://github.com/Automattic/node-canvas) README.
+For more information, check the **node-canvas** [Wiki](https://github.com/Automattic/node-canvas/wiki).
 
 ```bash
 ## Ubuntu or Debian
