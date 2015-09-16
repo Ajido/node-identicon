@@ -2,6 +2,16 @@ language: node_js
 node_js:
   - '0.10'
   - '0.12'
-  - 'iojs'
+  - '4'
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
 before_install:
-  - sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+  - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
+  - $CXX --version
+  - sudo chown -R $USER /usr/local
+  - curl -sL "https://raw.githubusercontent.com/Automattic/node-canvas/master/install" | sh
+  - npm explore npm -g -- npm install node-gyp@latest
