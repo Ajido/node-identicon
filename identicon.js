@@ -29,6 +29,7 @@
 
 var crypto = require('crypto');
 var Canvas = require('canvas-browserify');
+var dataURItoBuffer = require('data-uri-to-buffer');
 
 var patch0 = new Array(0, 4, 24, 20);
 var patch1 = new Array(0, 4, 20);
@@ -131,12 +132,12 @@ function _gen(str, size, callback) {
     render_identicon(ctx, code, size);
 
     if (callback && typeof callback === 'function') {
-        return canvas.toBuffer(function (err, buffer) {
-            callback(err, buffer);
+        return canvas.toDataURL(function (err, png) {
+            callback(err, dataURItoBuffer(png));
         });
     }
     else {
-        return canvas.toBuffer();
+        return dataURItoBuffer(canvas.toDataURL());
     }
 }
 

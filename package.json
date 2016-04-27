@@ -16,7 +16,8 @@
     "test": "mocha -R spec --recursive"
   },
   "dependencies": {
-    "canvas-browserify": "^1.1.3"
+    "canvas-browserify": "^1.1.3",
+    "data-uri-to-buffer": "0.0.4"
   },
   "devDependencies": {
     "mocha": "^2.2.4"
