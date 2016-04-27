@@ -16,7 +16,7 @@
     "test": "mocha -R spec --recursive"
   },
   "dependencies": {
-    "canvas": "^1.2.2"
+    "canvas-browserify": "^1.1.3"
   },
   "devDependencies": {
     "mocha": "^2.2.4"

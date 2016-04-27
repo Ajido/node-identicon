@@ -28,7 +28,7 @@
  */
 
 var crypto = require('crypto');
-var Canvas = require('canvas');
+var Canvas = require('canvas-browserify');
 
 var patch0 = new Array(0, 4, 24, 20);
 var patch1 = new Array(0, 4, 20);
