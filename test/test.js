@@ -3,7 +3,7 @@
 var assert = require('assert');
 var crypto = require('crypto');
 
-var Image = require('canvas').Image;
+var Image = require('canvas-browserify').Image;
 var identicon = require('../identicon');
 
 describe('generate', function() {
