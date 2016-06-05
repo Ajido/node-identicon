@@ -133,7 +133,7 @@ function _gen(str, size, callback) {
     if (callback && typeof callback === 'function') {
         if (!canvas.toBuffer) {
             var imageData = ctx.getImageData(0, 0, size, size);
-            callback(null, canvas.toDataURL('image/png'))
+            callback(null, canvas.toDataURL('image/png'));
             return;
         }
         return canvas.toBuffer(function (err, buffer) {
