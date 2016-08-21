@@ -189,8 +189,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (callback && typeof callback === 'function') {
 	        if (!canvas.toBuffer) {
 	            var imageData = ctx.getImageData(0, 0, size, size);
-	            //callback(null, imageData.data);
-	            callback(null, canvas.toDataURL('image/png'))
+	            callback(null, canvas.toDataURL('image/png'));
 	            return;
 	        }
 	        return canvas.toBuffer(function (err, buffer) {
@@ -199,9 +198,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    else {
 	        if (!canvas.toBuffer) {
-	            //var imageData = ctx.getImageData(0, 0, size, size);
 	            return canvas.toDataURL('image/png');
-	            //return imageData.data;
 	        }
 	        return canvas.toBuffer();
 	    }

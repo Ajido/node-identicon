@@ -1,11 +1,16 @@
 'use strict';
 
+const webpack = require('webpack');
+
 module.exports = {
-  entry: './identicon.js',
+  entry: {
+    'identicon': './identicon.js',
+    'identicon.min': './identicon.js',
+  },
   devtool: '#source-map',
   output: {
     path: './dist',
-    filename: 'identicon.js',
+    filename: '[name].js',
     library: 'identicon',
     libraryTarget: 'umd'
   },
@@ -14,5 +19,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js']
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      include: /\.min\.js$/,
+      minimize: true
+    })
+  ]
 };
