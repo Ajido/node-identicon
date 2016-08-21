@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>example</title>
+  <script type="text/javascript" src="dist/identicon.js"></script>
+</head>
+<body>
+  <div id="identicon"></div>
+</body>
+<script type="text/javascript">
+  identicon.generate({ id: 'ajido', size: 150 }, function(err, buffer) {
+      if (err) throw err;
+
+      var img = new Image();
+      img.src = buffer;
+      document.getElementById('identicon').appendChild(img);
+  });
+</script>
+</html>
