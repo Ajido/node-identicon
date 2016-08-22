@@ -3,7 +3,7 @@
 [![Npm version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][gemnasium-image]][gemnasium-url]
-  
+
 [Identicon](https://github.com/donpark/identicon) generator for Node.js
 
 ## Installation
@@ -46,6 +46,40 @@ var buffer = identicon.generateSync({ id: 'ajido', size: 40 });
 ```
 
 <img src="https://cloud.githubusercontent.com/assets/206827/7214948/529f8966-e5fc-11e4-8aa0-c84ada23acc2.png" width="300" height="300">
+
+## usage of Browser
+
+### pure javascript
+
+```html
+<script type="text/javascript" src="dist/identicon.js"></script>
+
+<div id='identicon'></div>
+
+<script type="text/javascript">
+  identicon.generate({ id: 'ajido', size: 150 }, function(err, buffer) {
+      if (err) throw err;
+
+      var img = new Image();
+      img.src = buffer;
+      document.getElementById('identicon').appendChild(img);
+  });
+</script>
+```
+
+### Webpack / Browserify
+
+```javascript
+const identicon = require('identicon');
+
+identicon.generate({ id: 'ajido', size: 150 }, function(err, buffer) {
+    if (err) throw err;
+
+    var img = new Image();
+    img.src = buffer;
+    document.getElementById('identicon').appendChild(img);
+});
+```
 
 ## License
 

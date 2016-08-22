@@ -13,13 +13,12 @@
     "url": "git://github.com/Ajido/node-identicon.git"
   },
   "scripts": {
-    "test": "mocha -R spec --recursive"
-  },
-  "dependencies": {
-    "canvas": "^1.2.2"
+    "test": "mocha -R spec --recursive",
+    "build": "webpack"
   },
   "devDependencies": {
-    "mocha": "^2.2.4"
+    "mocha": "^3.0.0",
+    "webpack": "^1.13.0"
   },
   "licenses": "MIT",
   "engines": {

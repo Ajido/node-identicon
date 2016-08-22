@@ -28,7 +28,7 @@
  */
 
 var crypto = require('crypto');
-var Canvas = require('canvas');
+var Canvas = require('canvas') || require('./lib/canvas');
 
 var patch0 = new Array(0, 4, 24, 20);
 var patch1 = new Array(0, 4, 20);
@@ -131,11 +131,19 @@ function _gen(str, size, callback) {
     render_identicon(ctx, code, size);
 
     if (callback && typeof callback === 'function') {
+        if (!canvas.toBuffer) {
+            var imageData = ctx.getImageData(0, 0, size, size);
+            callback(null, canvas.toDataURL('image/png'));
+            return;
+        }
         return canvas.toBuffer(function (err, buffer) {
             callback(err, buffer);
         });
     }
     else {
+        if (!canvas.toBuffer) {
+            return canvas.toDataURL('image/png');
+        }
         return canvas.toBuffer();
     }
 }
@@ -155,4 +163,3 @@ exports.generateSync = exports.genSync = function (str, size) {
 
     return _gen(str, size);
 }
-
