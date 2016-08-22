@@ -1,17 +1,22 @@
 language: node_js
 node_js:
-  - '0.10'
-  - '0.12'
+  - '6'
   - '4'
+  - '0.12'
+  - '0.10'
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
+      - libcairo2-dev
+      - libjpeg8-dev
+      - libpango1.0-dev
+      - libgif-dev
+      - g++-4.9
+env:
+  - CXX=g++-4.9
 before_install:
-  - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
-  - $CXX --version
-  - sudo chown -R $USER /usr/local
-  - curl -sL "https://raw.githubusercontent.com/Automattic/node-canvas/master/install" | sh
+  - if [[ $TRAVIS_NODE_VERSION == 0.8 ]]; then npm install -g npm@1.4.28; fi
   - npm explore npm -g -- npm install node-gyp@latest
+  - npm install canvas@^1.4.0
