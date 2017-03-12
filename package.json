@@ -23,5 +23,8 @@
   "licenses": "MIT",
   "engines": {
     "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "canvas-prebuilt": "^1.6.0"
   }
 }
