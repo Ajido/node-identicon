@@ -28,7 +28,11 @@
  */
 
 var crypto = require('crypto');
-var Canvas = require('canvas') || require('./lib/canvas');
+try {
+  var Canvas = require('canvas');
+} catch (err) {
+  var Canvas = require('canvas-prebuilt') || require('./lib/canvas');
+}
 
 var patch0 = new Array(0, 4, 24, 20);
 var patch1 = new Array(0, 4, 20);

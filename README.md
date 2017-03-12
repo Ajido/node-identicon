@@ -14,6 +14,8 @@ $ npm install identicon
 
 ## Installing dependencies
 
+If your project already uses `'canvas'` it will use that. Otherwise, it will use `canvas-prebuilt`.
+
 For more information, check the **node-canvas** [Wiki](https://github.com/Automattic/node-canvas/wiki).
 
 ```bash
