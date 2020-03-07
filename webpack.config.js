@@ -1,11 +1,12 @@
 'use strict';
 
+const path = require('path')
 const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    'identicon': './identicon.js',
-    'identicon.min': './identicon.js',
+    'identicon': path.join(__dirname, 'identicon.js'),
+    'identicon.min': path.join(__dirname, 'identicon.js'),
   },
   devtool: '#source-map',
   output: {

@@ -28,11 +28,8 @@
  */
 
 var crypto = require('crypto');
-try {
-  var Canvas = require('canvas');
-} catch (err) {
-  var Canvas = require('canvas-prebuilt') || require('./lib/canvas');
-}
+var isBrowser = typeof window !== 'undefined' && typeof window.document !== 'undefined';
+var Canvas = isBrowser ? require('./lib/canvas') : require('canvas');
 
 var patch0 = new Array(0, 4, 24, 20);
 var patch1 = new Array(0, 4, 20);
@@ -125,11 +122,11 @@ function render_identicon (ctx, code, size) {
 }
 
 function _gen(str, size, callback) {
-    var hash = crypto.createHash('sha1').update(new Buffer(str, 'utf8')).digest('binary');
+    var hash = crypto.createHash('sha1').update(Buffer.from(str, 'utf8')).digest('binary');
     var code = (hash.charCodeAt(0) << 24) | (hash.charCodeAt(1) << 16) |
     (hash.charCodeAt(2) << 8) | hash.charCodeAt(3);
 
-    var canvas = new Canvas(size, size);
+    var canvas = isBrowser ? new Canvas(size, size) : Canvas.createCanvas(size, size);
     var ctx = canvas.getContext('2d');
 
     render_identicon(ctx, code, size);
