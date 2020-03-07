@@ -20,38 +20,41 @@ For more information, check the **node-canvas** [Wiki](https://github.com/Automa
 
 ```bash
 ## Ubuntu or Debian
-apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
 
 ## RHEL or CentOS
-yum install cairo-devel libjpeg-turbo-devel libpng-devel giflib-devel gcc-c++
+sudo yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel
 
 ## Mac
-curl -sL https://raw.githubusercontent.com/LearnBoost/node-canvas/master/install | sh
+brew install pkg-config cairo pango libpng jpeg giflib librsvg
+
+## Windows
+## https://github.com/Automattic/node-canvas/wiki/Installation:-Windows
 ```
 
-## Example
+## In Node.js
 
 ```javascript
-var identicon = require('identicon');
-var fs = require('fs');
+const identicon = require('identicon')
+const fs = require('fs')
 
 // Asynchronous API
-identicon.generate({ id: 'ajido', size: 150 }, function(err, buffer) {
-    if (err) throw err;
+identicon.generate({ id: 'ajido', size: 150 }, (err, buffer) => {
+    if (err) throw err
 
     // buffer is identicon in PNG format.
-    fs.writeFileSync(__dirname + '/identicon.png', buffer);
+    fs.writeFileSync(__dirname + '/identicon.png', buffer)
 });
 
 // Synchronous API
-var buffer = identicon.generateSync({ id: 'ajido', size: 40 });
+const buffer = identicon.generateSync({ id: 'ajido', size: 40 })
 ```
 
 <img src="https://cloud.githubusercontent.com/assets/206827/7214948/529f8966-e5fc-11e4-8aa0-c84ada23acc2.png" width="300" height="300">
 
-## usage of Browser
+## In the Browser
 
-### pure javascript
+### Vanilla JavaScript
 
 ```html
 <script type="text/javascript" src="dist/identicon.js"></script>
@@ -72,15 +75,14 @@ var buffer = identicon.generateSync({ id: 'ajido', size: 40 });
 ### Webpack / Browserify
 
 ```javascript
-const identicon = require('identicon');
+const identicon = require('identicon')
 
-identicon.generate({ id: 'ajido', size: 150 }, function(err, buffer) {
-    if (err) throw err;
-
-    var img = new Image();
-    img.src = buffer;
-    document.getElementById('identicon').appendChild(img);
-});
+identicon.generate({ id: 'ajido', size: 150 }, (err, buffer) => {
+    if (err) throw err
+    const img = new Image()
+    img.src = buffer
+    document.getElementById('identicon').appendChild(img)
+})
 ```
 
 ## License

@@ -7,7 +7,6 @@ module.exports = {
   mode: 'production',
   entry: {
     'identicon': path.join(__dirname, 'identicon.js'),
-    'identicon.min': path.join(__dirname, 'identicon.js'),
   },
   devtool: 'source-map',
   output: {
