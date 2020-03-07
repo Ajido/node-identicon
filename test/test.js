@@ -3,7 +3,7 @@
 var assert = require('assert');
 var crypto = require('crypto');
 
-var Image = require('canvas-prebuilt').Image;
+var Image = require('canvas').Image;
 var identicon = require('../identicon');
 
 describe('generate', function() {
