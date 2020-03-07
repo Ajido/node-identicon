@@ -1,7 +1,7 @@
 {
   "name": "identicon",
   "description": "Identicon Generator for Node.js",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Ajido <dkuriyam@gmail.com>",
   "main": "identicon",
   "keywords": [
