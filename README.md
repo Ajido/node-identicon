@@ -1,7 +1,7 @@
 # node-identicon
 
 [![Npm version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![CI](https://github.com/Ajido/node-identicon/actions/workflows/ci.yml/badge.svg)](https://github.com/Ajido/node-identicon/actions/workflows/ci.yml)
 
 [Identicon](https://github.com/donpark/identicon) generator for Node.js
 
@@ -89,9 +89,5 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-[travis-image]: https://img.shields.io/travis/Ajido/node-identicon.svg?style=flat-square
-[travis-url]: https://travis-ci.org/Ajido/node-identicon
 [npm-image]: https://img.shields.io/npm/v/identicon.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/identicon
-[gemnasium-image]: http://img.shields.io/gemnasium/Ajido/node-identicon.svg?style=flat-square
-[gemnasium-url]: https://gemnasium.com/Ajido/node-identicon
