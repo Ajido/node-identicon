@@ -2,7 +2,6 @@
 
 [![Npm version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
-[![Dependency Status][gemnasium-image]][gemnasium-url]
 
 [Identicon](https://github.com/donpark/identicon) generator for Node.js
 
@@ -10,26 +9,6 @@
 
 ```bash
 $ npm install identicon
-```
-
-## Installing dependencies
-
-If your project already uses `'canvas'` it will use that. Otherwise, it will use `canvas-prebuilt`.
-
-For more information, check the **node-canvas** [Wiki](https://github.com/Automattic/node-canvas/wiki).
-
-```bash
-## Ubuntu or Debian
-sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
-
-## RHEL or CentOS
-sudo yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel
-
-## Mac
-brew install pkg-config cairo pango libpng jpeg giflib librsvg
-
-## Windows
-## https://github.com/Automattic/node-canvas/wiki/Installation:-Windows
 ```
 
 ## In Node.js
